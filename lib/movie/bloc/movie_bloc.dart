@@ -20,7 +20,9 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
     if (event is FetchMoviesEvent) {
       yield MovieLoadingState(message: 'Loading Movies');
       try{
+
       final movies = await movieRepository.fetchMovies(page: page);
+
           yield MovieLoadedState(
             movies: movies,
           );

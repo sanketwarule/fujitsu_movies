@@ -14,7 +14,7 @@ class MovieRepoImpl extends MovieRepo {
     print("page = " + page.toString());
 
     final response = await http.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=${Api.API_KEY}&language=en-US&page=$page",);
+        "${Api.baseUrl + Api.API_KEY}&language=en-US&page=$page",);
     print("status code :: " +
         response.statusCode.toString() +
         " response :: " +

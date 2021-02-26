@@ -11,7 +11,7 @@ class MovieInitialState extends MovieState {
 
 class MovieErrorState extends MovieState {
 
-  String message;
+  final String message;
 
   MovieErrorState({this.message});
 
