@@ -35,7 +35,7 @@ class _MovieListScreenState extends State<MovieListScreen> {
         builder: (context, movieState) {
           if (movieState is MovieInitialState ||
               movieState is MovieLoadingState && _movies.isEmpty) {
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           } else if (movieState is MovieLoadedState) {
             _movies.addAll(movieState.movies);
             BlocProvider.of<MovieBloc>(context).isFetching = false;
